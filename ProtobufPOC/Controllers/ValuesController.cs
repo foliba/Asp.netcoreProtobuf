@@ -10,7 +10,7 @@ namespace ProtobufPOC.Controllers
     {
         // GET api/values
         [HttpGet]
-        [Produces("application/x-protobuf")]
+        [FormatFilter]
         public ActionResult<ResponseDTO> Get()
         {
             var result = new ResponseDTO() {

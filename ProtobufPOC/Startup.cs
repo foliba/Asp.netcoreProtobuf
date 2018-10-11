@@ -23,6 +23,7 @@ namespace ProtobufPOC
                 options.InputFormatters.Add(new ProtobufInputFormatter());
                 options.OutputFormatters.Add(new ProtobufOutputFormatter());
                 options.FormatterMappings.SetMediaTypeMappingForFormat("protobuf", "application/x-protobuf");
+                options.FormatterMappings.SetMediaTypeMappingForFormat("json", "application/json");
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
