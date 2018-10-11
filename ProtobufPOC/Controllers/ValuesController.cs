@@ -23,5 +23,19 @@ namespace ProtobufPOC.Controllers
 
             return result;
         }
+
+
+        // GET api/values/empty
+        [HttpGet("empty")]
+        [FormatFilter]
+        public ActionResult<ResponseDTO> Get(string empty)
+        {
+            var result = new ResponseDTO()
+            {
+                Elements = new List<string>()
+            };
+
+            return result;
+        }
     }
 }
