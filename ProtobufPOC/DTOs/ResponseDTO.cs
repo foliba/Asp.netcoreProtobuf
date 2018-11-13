@@ -5,23 +5,9 @@ using System;
 namespace ProtobufPOC.DTOs
 {
     [ProtoContract]
-    public class ResponseDTO
+    public class ResponseDTO : BaseDTO
     {
         [ProtoMember(1)]
         public List<string> Elements { get; set; }
-
-        [ProtoMember(2)]
-        public string CurrentDateTime {
-            get {
-                return (dateTimeWasOverwritten) ? currentDateTime.ToString() : DateTime.UtcNow.ToString();
-            }
-            set {
-                currentDateTime = DateTime.Parse(value);
-                dateTimeWasOverwritten = true;
-            }
-        }
-
-        private DateTime currentDateTime;
-        private bool dateTimeWasOverwritten;
     }
 }
