@@ -15,7 +15,7 @@ namespace ProtobufPOC.Controllers
         {
             var result = new ResponseDTO() {
                 Elements = new List<string>() {
-                    "Appel",
+                    "Apple",
                     "Tomato",
                     "Chicken"
                 }
