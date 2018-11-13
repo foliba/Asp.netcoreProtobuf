@@ -32,7 +32,6 @@ namespace ProtobufPOC.Controllers
         {
             var result = new ResponseDTO()
             {
-                Elements = new List<string>()
             };
 
             return result;

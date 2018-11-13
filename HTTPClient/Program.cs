@@ -9,10 +9,12 @@ namespace WebClientProtobuf
 {
     class Program
     {
+        static readonly string baseAddress = "https://localhost:5001/";
+
         static void Main(string[] args)
         {
             // HTTP GET with Protobuf Response Body
-            var client = new HttpClient { BaseAddress = new Uri("https://localhost:5001/") };
+            var client = new HttpClient { BaseAddress = new Uri(baseAddress) };
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(ConfigHelper.GetContentType(ContentType.Protobuf)));
 
             HttpResponseMessage response = client.GetAsync("api/Values").Result;
