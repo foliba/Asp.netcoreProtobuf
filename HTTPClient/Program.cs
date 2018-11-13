@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using ProtobufPOC.DTOs;
 using Newtonsoft.Json;
+using ProtobufPOC.Helpers;
 
 namespace WebClientProtobuf
 {
@@ -12,7 +13,7 @@ namespace WebClientProtobuf
         {
             // HTTP GET with Protobuf Response Body
             var client = new HttpClient { BaseAddress = new Uri("https://localhost:5001/") };
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/x-protobuf"));
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(ConfigHelper.GetContentType(ContentType.Protobuf)));
 
             HttpResponseMessage response = client.GetAsync("api/Values").Result;
 

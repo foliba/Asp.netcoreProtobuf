@@ -3,15 +3,14 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Net.Http.Headers;
 using ProtoBuf.Meta;
+using ProtobufPOC.Helpers;
 
 namespace Formatters
 {
     public class ProtobufOutputFormatter :  OutputFormatter
     {
         private static Lazy<RuntimeTypeModel> model = new Lazy<RuntimeTypeModel>(CreateTypeModel);
- 
-        public string ContentType { get; private set; }
- 
+  
         public static RuntimeTypeModel Model
         {
             get { return model.Value; }
@@ -19,8 +18,7 @@ namespace Formatters
  
         public ProtobufOutputFormatter()
         {
-            ContentType = "application/x-protobuf";
-            SupportedMediaTypes.Add(MediaTypeHeaderValue.Parse("application/x-protobuf"));
+            SupportedMediaTypes.Add(MediaTypeHeaderValue.Parse(ConfigHelper.GetContentType(ContentType.Protobuf)));
  
             //SupportedEncodings.Add(Encoding.GetEncoding("utf-8"));
         }

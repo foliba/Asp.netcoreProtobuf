@@ -8,6 +8,7 @@
     <Folder Include="wwwroot\" />
     <Folder Include="DTOs\" />
     <Folder Include="Formatters\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
 
   <ItemGroup>
