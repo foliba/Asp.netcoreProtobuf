@@ -23,7 +23,9 @@ namespace WebClientProtobuf
                 var dto = ProtoBuf.Serializer.Deserialize<ResponseDTO>(message);
 
                 Console.WriteLine(JsonConvert.SerializeObject(dto));
-
+                var proto = ProtoBuf.Serializer.GetProto<ResponseDTO>();
+                Console.WriteLine("Proto:");
+                Console.WriteLine(proto);
             }
             else
             {
